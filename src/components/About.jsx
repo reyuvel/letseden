@@ -2,7 +2,7 @@ import React from 'react';
 import JoinImage from './join.png';
 import { useInView } from 'react-intersection-observer';
 
-export const About = () => {
+ const About = () => {
   const { ref: imageRef, inView: imageInView } = useInView({
     triggerOnce: true, // Only trigger once
   });
@@ -66,3 +66,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default About;

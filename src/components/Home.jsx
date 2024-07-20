@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ConnectImage from './Connect.jpg'; // Adjust the path if necessary
 
-export const Home = () => {
+const Home = () => {
   const [slideInText, setSlideInText] = useState(false);
   const [slideInImage, setSlideInImage] = useState(false);
 
@@ -42,3 +42,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

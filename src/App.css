@@ -59,3 +59,15 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.control{
+
+  width: 20%;
+  background: #b5bccc;
+  color: #fff;
+}
+
+.container{
+  display: flex;
+  height: 88vh;
+}

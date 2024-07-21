@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ConnectImage from './Connect.jpg'; // Adjust the path if necessary
+import { useNavigate } from "react-router-dom";
+import ConnectImage from './Connect.jpg';
 
 const Home = () => {
+  let navigate = useNavigate(); // Initialize useHistory
   const [slideInText, setSlideInText] = useState(false);
   const [slideInImage, setSlideInImage] = useState(false);
 
@@ -11,6 +13,10 @@ const Home = () => {
       setSlideInImage(true);
     }, 500); // Delay image slide-in to create a staggered effect
   }, []);
+
+  const handleStartClick = () => {
+    navigate('/map'); // Use history.push to navigate to the "/map" route
+  };
 
   return (
     <div>
@@ -25,15 +31,15 @@ const Home = () => {
                 "That they may be one, even as we are one" - John 17:23
               </p>
               <div className="d-flex justify-content-center">
-                <button className="btn btn-outline-success rounded-pill text-black px-4">Start</button>
+                <button onClick={handleStartClick} className="btn btn-outline-success rounded-pill text-black px-4">Start</button>
               </div>
             </div>
             <div className="col-md-7 d-flex justify-content-end align-items-center">
-              <img 
-                src={ConnectImage} 
-                alt="Beautiful Scenery" 
-                className={`img-fluid shadow-lg ${slideInImage ? 'slide-in-below' : 'hidden'}`} 
-                style={{ borderRadius: '50px', marginTop: '2rem', width: '70%', height: 'auto' }} 
+              <img
+                src={ConnectImage}
+                alt="Beautiful Scenery"
+                className={`img-fluid shadow-lg ${slideInImage ? 'slide-in-below' : 'hidden'}`}
+                style={{ borderRadius: '50px', marginTop: '2rem', width: '70%', height: 'auto' }}
               />
             </div>
           </div>

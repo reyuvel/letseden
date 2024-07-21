@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Map from './components/Map';
+import Map from './pages/Map';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { mapOptions } from './components/MapConfiguration';
+import Navbar from './components/Navbar';
 
 
 function App() {

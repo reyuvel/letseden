@@ -34,10 +34,11 @@ const Map = (props) => {
     const fetchMarkers = async () => {
       const { data: markersData, error } = await supabase
         .from('eventdetails')
-        .select('id, latitude, longitude');
+        .select('id, latitude, longitude, eventname, date, time, address, phone');
       if (error) {
         console.error('Error fetching markers:', error);
       } else {
+        console.log('Fetched markers:', markersData); // Add console log
         setMarkers(markersData);
       }
     };
@@ -48,6 +49,9 @@ const Map = (props) => {
     <>
       <MapNavbar />
       <div className='container'>
+        <div className='control' style={{ marginRight: '20px' }}>
+          <h1></h1>
+        </div>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
@@ -68,7 +72,10 @@ const Map = (props) => {
                 <Marker
                   key={marker.id}
                   position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
-                  onClick={() => setSelectedMarker(marker)}
+                  onClick={() => {
+                    console.log('Selected marker:', marker); // Add console log
+                    setSelectedMarker(marker);
+                  }}
                 />
               );
             } else {
@@ -80,17 +87,21 @@ const Map = (props) => {
               position={{ lat: parseFloat(selectedMarker.latitude), lng: parseFloat(selectedMarker.longitude) }}
               onCloseClick={() => setSelectedMarker(null)}
             >
-              <div>
-                <h2>Marker Details</h2>
-                <p>Additional details of the marker</p>
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${selectedMarker.latitude},${selectedMarker.longitude}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View on Google Maps
-                </a>
-              </div>
+               <div className="infoWindowContainer">
+                  <h3>{selectedMarker.eventname}</h3>
+                  <p><strong>Date:</strong> {new Date(selectedMarker.date).toLocaleDateString()}</p>
+                  <p><strong>Time:</strong> {selectedMarker.time}</p>
+                  <p><strong>Address:</strong> {selectedMarker.address}</p>
+                  <p><strong>Phone:</strong> {selectedMarker.number}</p>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${selectedMarker.latitude},${selectedMarker.longitude}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mapLink"
+                  >
+                    View on Google Maps
+                  </a>
+               </div>
             </InfoWindow>
           )}
         </GoogleMap>

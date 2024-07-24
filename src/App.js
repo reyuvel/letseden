@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import Map from './pages/Map';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { mapOptions } from './components/MapConfiguration';
-import Navbar from './components/Navbar';
+import RegNavbar from './components/RegNavbar';
 
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/map" element={<Map isLoaded={isLoaded} />} />
+            <Route path="/register" element={<RegNavbar />} />
+
           </Routes>
         </BrowserRouter>
       </div>

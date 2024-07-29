@@ -3,7 +3,7 @@ import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 import MapNavbar from '../components/MapNavbar';
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient("https://ioqtnmfodrdfuyvnnbbr.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlvcXRubWZvZHJkZnV5dm5uYmJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3NjIwMjQsImV4cCI6MjAzNzMzODAyNH0.dFW-GWQwVB3jadpZKqTL9SYJmHEcFO_LKUEB9PA370U");
+const supabase = createClient("https://ioqtnmfodrdfuyvnnbbr.supabase.co", "");
 
 const Map = (props) => {
   const [selectedMarker, setSelectedMarker] = useState(null);

@@ -5,9 +5,9 @@ import HomePage from './pages/HomePage';
 import Map from './pages/Map';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { mapOptions } from './components/MapConfiguration';
-import RegNavbar from './components/RegNavbar';
-
-
+import Register from './pages/Register';
+import Login from './pages/Register';
+import { Hostpage } from './pages/Hostpage';
 function App() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -22,7 +22,9 @@ function App() {
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/map" element={<Map isLoaded={isLoaded} />} />
-            <Route path="/register" element={<RegNavbar />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/hostpage" element={<Hostpage/>} />
+
 
           </Routes>
         </BrowserRouter>

@@ -1,0 +1,61 @@
+.logincontainer {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    height: 100vh;           /* Take full viewport height */
+    background: rgb(130, 137, 145); /* Optional: background color or gradient */
+  }
+  
+  
+  
+  .login {
+    background-color: #3b3b3b; /* Login box background color */
+    padding: 1rem 4rem; /* Reduce vertical padding (height) */
+    border-radius: 8px;
+    box-shadow: 40px 40px 40px rgba(9, 9, 9, 0.3);
+    width: 400px; /* Fixed width */
+    text-align: center;
+  }
+  
+  .login-header {
+    margin-bottom: -1rem; /* Add some space between header and content */
+  }
+  
+  .login h1 {
+    margin: 0 0 1rem; /* Reduce bottom margin */
+    font-size: 20px; /* Reduced font size */
+    font-weight: 600;
+    color: #fff; /* Heading color */
+  }
+  
+  .login p {
+    color: #ccc; /* Lighter color for better readability */
+    margin-bottom: 0rem; /* Space below the paragraph */
+    font-size: 14px; /* Reduced font size */
+  }
+  
+  button {
+    background-color: #ff005f; /* Button color */
+    color: #fff;
+    border: none;
+    padding: 0rem 0rem; /* Reduced button padding */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #e60050; /* Darker shade on hover */
+  }
+  
+  /* Custom styles for the Auth component */
+  .auth-ui {
+    margin-top: 1rem;
+  }
+  
+  .auth-ui button {
+    width: 10%; /* Full width buttons */
+    margin-top: 0.75rem; /* Space between buttons */
+    font-size: 14px; /* Match button font size to other text */
+  }

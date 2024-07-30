@@ -1,0 +1,38 @@
+.g-3 {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5000px 300px rgba(234, 25, 25, 0.1);
+    border-radius: 8px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0d6efd; /* Bootstrap primary color */
+}
+
+/* Style adjustments for form inputs */
+.c-form-input {
+    margin-bottom: 20px; /* consistent bottom margin for inputs */
+}
+
+/* Button customization */
+.c-button-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .c-col-md-6, .c-col-md-4, .c-col-md-2 {
+        padding: 0 15px; /* adding padding to columns on larger screens */
+    }
+}
+
+.submitbtn{
+    justify-content: center;
+    align-items: center;
+background-color: rgb(224, 233, 235);}

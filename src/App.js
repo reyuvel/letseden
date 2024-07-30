@@ -8,6 +8,8 @@ import { mapOptions } from './components/MapConfiguration';
 import Register from './pages/Register';
 import Login from './pages/Register';
 import { Hostpage } from './pages/Hostpage';
+import { Addevent } from './pages/Addevent';
+import Navbar from './components/Navbar';
 function App() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -24,6 +26,8 @@ function App() {
             <Route path="/map" element={<Map isLoaded={isLoaded} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/hostpage" element={<Hostpage/>} />
+            <Route path="/addevent" element={<Addevent/>} />
+          
 
 
           </Routes>

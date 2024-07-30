@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import About from '../components/About.jsx';
 import Home from '../components/Home.jsx';
+import '../css/Home.css';
 
 const HomePage = () => {
   return (

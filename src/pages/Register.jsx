@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/Login.css'; // Import your CSS file
 
-const supabase = createClient("https://ioqtnmfodrdfuyvnnbbr.supabase.co", "");
+const supabase = createClient("", "");
 
 function Login() {
     let navigate = useNavigate(); // Initialize useNavigate

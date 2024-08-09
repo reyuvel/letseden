@@ -1,20 +1,25 @@
-import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/Login.css'; // Import your CSS file
-
-const supabase = createClient("", "");
+import supabase from "../config/supabaseClient";
+import { useUser,useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function Login() {
     let navigate = useNavigate(); // Initialize useNavigate
+    // const user=useUser();
+    // const supabase=useSupabaseClient();
+
+
+    
 
     useEffect(() => {
-        const { data: subscription } = supabase.auth.onAuthStateChange((event, session) => {
+
+         supabase.auth.onAuthStateChange((event, session) => {
             // Check if the event is a sign-in
             if (event === "SIGNED_IN") {
-                navigate("/hostpage"); // Redirect to /hostpage on sign-in
+                navigate("/hosthome"); // Redirect to /hostpage on sign-in
             }
 
             else if (event === "SIGNED_OUT") {
@@ -22,7 +27,7 @@ function Login() {
             }
 
             else {
-                navigate("/register")
+                navigate("/login")
             }
         });
 

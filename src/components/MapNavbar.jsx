@@ -6,12 +6,12 @@ const MapNavbar = () => {
   let navigate = useNavigate(); // Initialize useHistory
 
   const handleRegClick = () => {
-    navigate('/register'); // Use history.push to navigate to the "/map" route
+    navigate('/login'); // Use history.push to navigate to the "/map" route
   };
 
   return (
     <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg shadow">
   <div class="container-fluid">
   <a class="navbar-brand fs-4 mx-auto fw-bold" href="#">LET'S EDEN</a>
 

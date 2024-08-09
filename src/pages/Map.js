@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, Marker, InfoWindow , TileLayer} from '@react-google-maps/api';
 import MapNavbar from '../components/MapNavbar';
-import { createClient } from "@supabase/supabase-js";
+import supabase from '../config/supabaseClient';
 
-const supabase = createClient("", "");
 
-const Map = (props) => {
+function Map(props) {
   const [selectedMarker, setSelectedMarker] = useState(null);
   const { isLoaded } = props;
   const [center, setCenter] = useState({ lat: 45.421523, lng: -75.697189 });
@@ -62,12 +61,10 @@ const Map = (props) => {
           )}
           {markers.map((marker) => {
             // Check if latitude and longitude are valid numbers
-            if (
-              marker.latitude !== null &&
+            if (marker.latitude !== null &&
               marker.longitude !== null &&
               !isNaN(marker.latitude) &&
-              !isNaN(marker.longitude)
-            ) {
+              !isNaN(marker.longitude)) {
               return (
                 <Marker
                   key={marker.id}
@@ -75,8 +72,7 @@ const Map = (props) => {
                   onClick={() => {
                     console.log('Selected marker:', marker); // Add console log
                     setSelectedMarker(marker);
-                  }}
-                />
+                  } } />
               );
             } else {
               return null; // Do not render invalid markers
@@ -87,23 +83,23 @@ const Map = (props) => {
               position={{ lat: parseFloat(selectedMarker.latitude), lng: parseFloat(selectedMarker.longitude) }}
               onCloseClick={() => setSelectedMarker(null)}
             >
-               <div className="infoWindowContainer">
-                  <h3>{selectedMarker.eventname}</h3>
-                  <p><strong>Date:</strong> {new Date(selectedMarker.date).toLocaleDateString()}</p>
-                  <p><strong>Time:</strong> {selectedMarker.time}</p>
-                  <p><strong>Address:</strong> {selectedMarker.address}</p>
-                  <p><strong>Phone:</strong> {selectedMarker.number}</p>
-                  <p><strong>Church:</strong> {selectedMarker.Church}</p>
+              <div className="infoWindowContainer">
+                <h3>{selectedMarker.eventname}</h3>
+                <p><strong>Date:</strong> {new Date(selectedMarker.date).toLocaleDateString()}</p>
+                <p><strong>Time:</strong> {selectedMarker.time}</p>
+                <p><strong>Address:</strong> {selectedMarker.address}</p>
+                <p><strong>Phone:</strong> {selectedMarker.number}</p>
+                <p><strong>Church:</strong> {selectedMarker.Church}</p>
 
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${selectedMarker.latitude},${selectedMarker.longitude}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mapLink"
-                  >
-                    View on Google Maps
-                  </a>
-               </div>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${selectedMarker.latitude},${selectedMarker.longitude}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mapLink"
+                >
+                  View on Google Maps
+                </a>
+              </div>
             </InfoWindow>
           )}
         </GoogleMap>

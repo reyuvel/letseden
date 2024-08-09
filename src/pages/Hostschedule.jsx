@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react'
+import Navbar from '../components/Navbar'
+import { Hostside } from '../components/Hostside'
+import '../css/Hostside.css'
+import { useState } from 'react';
 import { useLoadScript, Autocomplete } from '@react-google-maps/api';
-import Navbar from '../components/Navbar';
 import { CAlert, CCol, CFormInput, CForm, CButton } from '@coreui/react';
 import '@coreui/coreui/dist/css/coreui.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +14,9 @@ import 'react-international-phone/style.css';
 import { mapOptions } from '../components/MapConfiguration';
 import supabase from '../config/supabaseClient';
 
-export const Addevent = () => {
+export const Hostschedule = () => {
+
+
     const [eventname, setEventname] = useState('');
     const [phone, setPhone] = useState('');
     const [time, setTime] = useState('');
@@ -59,11 +64,13 @@ export const Addevent = () => {
     });
 
     if (!isLoaded) return <div>Loading...</div>;
+  return (
+    <>
 
-    return (
-        <>
-            <Navbar />
-            <div>
+        <Navbar/>
+        <div style={{ display: 'flex' }}>
+    <Hostside />
+    <div style={{ flex: 1 }}>
                 <CForm className="row addevent g-3" onSubmit={handleSubmit}>
                     <h1>Event Details</h1>
 
@@ -137,7 +144,7 @@ export const Addevent = () => {
                     </CCol>
 
                     <CCol md={10}>
-                        <label htmlFor="location-autocomplete" style={{ display: 'block', marginBottom: '6px' }}>Location</label>
+                        <label htmlFor="location-autocomplete" style={{ display: 'block', marginBottom: '6px' }}> Search For Location</label>
                         <Autocomplete
                             onLoad={(autocomplete) => { window.googleAutocomplete = autocomplete }}
                             onPlaceChanged={() => {
@@ -167,6 +174,11 @@ export const Addevent = () => {
                     </CCol>
                 </CForm>
             </div>
-        </>
-    );
-};
+            </div>
+
+
+
+    
+    </>
+  )
+}

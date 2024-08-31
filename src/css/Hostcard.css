@@ -1,0 +1,53 @@
+.eventcard-grid{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.eventcard {
+    width: 80%;
+    max-width: 600px;
+    height: 200px;
+    padding: 20px;
+    background: linear-gradient(0deg, #b0bab0, #5cb8e3); /* Linear gradient background */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    box-sizing: border-box;
+    margin: 20px auto; /* Center the card and add spacing between cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+}
+
+.eventcard:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Increase shadow intensity on hover */
+}
+
+.eventcard h1, .eventcard h2, .eventcard h3, .eventcard h4, .eventcard h5, .eventcard h6 {
+    margin: 0 0 10px; /* Space out headings */
+    font-weight: 600; /* Bold headings */
+    color: #333333; /* Dark gray color for text */
+    font-size: small;
+}
+
+.eventcard p {
+    margin: 0 0 10px; /* Space out paragraphs */
+    color: #666666; /* Medium gray text for better readability on white */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+.eventcard .event-details {
+    margin-top: 15px; /* Add space before event details */
+}
+
+.eventcard .event-details span {
+    display: block; /* Make each detail occupy its own line */
+    color: #999999; /* Light gray color for detail text */
+    margin-bottom: 5px; /* Space between details */
+}
+
+.eventcard .event-details span i {
+    margin-right: 5px; /* Space between icon and text */
+    color: #009688; /* Different color for icons for highlighting */
+}

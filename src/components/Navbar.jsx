@@ -1,9 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate = useNavigate();  // Correctly use the hook inside the component
+
+  const handleClick = () => {
+    navigate('/');
+  };
   return (
-    <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div id="letseden">
+        <nav class="navbar navbar-expand-lg shadow">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +26,7 @@ const Navbar = () => {
           <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
-      <a class="navbar-brand fs-4 mx-auto fw-bold" href="#">LET'S EDEN</a>
+      <a onClick={handleClick} class="navbar-brand fs-4 mx-auto fw-bold" href="#">LET'S EDEN</a>
 
       <form class="d-flex" role="search">
       <button class="btn btn-outline-success fa fa-search mr-1" type="submit"></button>

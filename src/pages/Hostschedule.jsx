@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import { Hostside } from '../components/Hostside'
 import '../css/Hostside.css'
@@ -26,6 +26,18 @@ export const Hostschedule = () => {
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
+    const [user, setUser] = useState(null);
+
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser();
+            setUser(user);
+        };
+
+        fetchUser();
+    }, []);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,7 +58,8 @@ export const Hostschedule = () => {
                     address,
                     location,
                     latitude,
-                    longitude
+                    longitude,
+                    id_user:user.id
                 }
             ]);
 
@@ -56,6 +69,12 @@ export const Hostschedule = () => {
             console.log('Data inserted successfully:', data);
         }
     };
+
+    const submitted=()=>{
+
+        alert("submitted");
+
+    }
 
     const { isLoaded } = useLoadScript({
         id: 'google-map-script',
@@ -170,7 +189,7 @@ export const Hostschedule = () => {
                     </CCol>
 
                     <CCol xs={12}>
-                        <CButton name='submit' className='submitbtn' color="primary" type="submit">Submit</CButton>
+                        <CButton onClick={submitted} name='submit' className='submitbtn' color="primary" type="submit">Submit</CButton>
                     </CCol>
                 </CForm>
             </div>

@@ -47,9 +47,21 @@ function Map(props) {
   return isLoaded && (
     <>
       <MapNavbar />
+
       <div className='container'>
         <div className='control' style={{ marginRight: '20px' }}>
-          <h1></h1>
+          <h1>Filter</h1>
+
+          
+      <h2 className="sidebar-title">Category</h2>
+
+<div>
+  <label className="sidebar-label-container">
+    <input  type="radio" value="" name="test" />
+    <span className="checkmark"></span>All
+  </label>
+
+  </div>
         </div>
         <GoogleMap
           mapContainerStyle={containerStyle}

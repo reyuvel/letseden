@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -12,11 +12,19 @@ import { Addevent } from './pages/Addevent';
 import Navbar from './components/Navbar';
 import { Hosthomepage } from './pages/Hosthomepage';
 import { Hostschedule } from './pages/Hostschedule';
+import { supabase } from '@supabase/auth-ui-shared';
 function App() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: mapOptions.googleMapApiKey
   });
+
+  useEffect(()=>{
+
+    const fetchUser = async()=>{
+      const {data:{user}}=await supabase.auth.getUser()
+    }
+  })
 
 
   return (
@@ -26,6 +34,9 @@ function App() {
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/map" element={<Map isLoaded={isLoaded} />} />
+            
+
+
             <Route path="/login" element={<Login />} />
             <Route path="/hostpage" element={<Hostpage/>} />
             <Route path="/addevent" element={<Addevent/>} />

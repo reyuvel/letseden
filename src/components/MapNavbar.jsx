@@ -9,11 +9,15 @@ const MapNavbar = () => {
     navigate('/login'); // Use history.push to navigate to the "/map" route
   };
 
+  const handleclick=()=>{
+    navigate('/');
+  }
+
   return (
     <div>
         <nav class="navbar navbar-expand-lg shadow">
   <div class="container-fluid">
-  <a class="navbar-brand fs-4 mx-auto fw-bold" href="#">LET'S EDEN</a>
+  <a onClick={handleclick}class="navbar-brand fs-4 mx-auto fw-bold" href="#">LET'S EDEN</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

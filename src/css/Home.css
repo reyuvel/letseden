@@ -71,3 +71,26 @@
  display: flex;
  height: 88vh;
 }
+
+.container1{
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.card{
+
+  transition: all 0.1s ease-in;
+
+}
+
+.card:hover{
+
+  cursor: pointer;
+  box-shadow: 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.contactimage{
+  height: 60%;
+}

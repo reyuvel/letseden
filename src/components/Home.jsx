@@ -24,13 +24,13 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className={`col-md-5 mt-5 ${slideInText ? 'slide-in-left' : ''}`}>
-              <h1 className="display-4 text-center fw-bolder" style={{ marginTop: '2rem', fontSize: '70px' }}>
+              <h1 className="display-4 text-left fw-bolder" style={{ marginTop: '2rem', fontSize: '70px' }}>
                 CONNECT COMMUNE CONQUER
               </h1>
               <p className="lead" style={{ whiteSpace: 'nowrap' }}>
                 "That they may be one, even as we are one" - John 17:23
               </p>
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-left" style={{marginLeft:'100px'}}>
                 <button onClick={handleStartClick} className="btn btn-outline-success rounded-pill text-black px-4">Start</button>
               </div>
             </div>
@@ -39,7 +39,7 @@ const Home = () => {
                 src={ConnectImage}
                 alt="Beautiful Scenery"
                 className={`img-fluid shadow-lg ${slideInImage ? 'slide-in-below' : 'hidden'}`}
-                style={{ borderRadius: '50px', marginTop: '2rem', width: '70%', height: 'auto' }}
+                style={{ borderRadius: '50px', marginTop: '-2rem', width: '70%', height: 'auto' }}
               />
             </div>
           </div>

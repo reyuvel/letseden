@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar.jsx';
 import About from '../components/About.jsx';
 import Home from '../components/Home.jsx';
 import '../css/Home.css';
+import { Services } from '../components/Services.jsx';
+import { Contact } from '../components/Contact.jsx';
 
 const HomePage = () => {
   return (
@@ -11,6 +13,8 @@ const HomePage = () => {
       <Navbar />
       <Home />
       <About />
+      <Services/>
+      <Contact/>
     </>
   );
 };

@@ -1,0 +1,63 @@
+.containermap{
+
+    display: flex;
+}
+
+
+.control
+{
+    font-size: 20px;
+
+    margin-right: 10px;
+    color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    
+
+}
+
+.filtering-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    width: 250px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+}
+
+.filtering-box p {
+    font-size: 18px;
+    color: #333;
+}
+
+.filtering-box h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filtering-box label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+
+.sidebar-label-container
+{
+    
+
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+

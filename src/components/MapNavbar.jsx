@@ -6,46 +6,35 @@ const MapNavbar = () => {
   let navigate = useNavigate(); // Initialize useHistory
 
   const handleRegClick = () => {
-    navigate('/login'); // Use history.push to navigate to the "/map" route
+    navigate('/login'); // Use navigate to go to login
   };
 
-  const handleclick=()=>{
+  const handleclick = () => {
     navigate('/');
   }
 
   return (
     <div>
-        <nav class="navbar navbar-expand-lg shadow">
-  <div class="container-fluid">
-  <a onClick={handleclick}class="navbar-brand fs-4 mx-auto fw-bold" href="#">LET'S EDEN</a>
+      <nav class="navbar navbar-expand-lg shadow">
+        <div class="container-fluid" style={{display:'flex', justifyContent:'center', position: 'relative'}}>
+          
+          {/* Logo centered */}
+          <a onClick={handleclick} class="navbar-brand fs-4 fw-bold" style={{position: 'absolute', left: '50%', transform: 'translateX(-50%)'}} href="#">
+            LET'S EDEN
+          </a>
+          
+          {/* Search and Register form on the right */}
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <form class="d-flex" role="search">
+              <button class="btn btn-outline-success fa fa-search mr-1" type="submit"></button>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-
-      <form class="d-flex" role="search">
-      <button class="btn btn-outline-success fa fa-search mr-1" type="submit"></button>
-
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button onClick={handleRegClick} class="btn btn-outline-primary ms-auto px-4 rounded-pill">Register</button>
-
-      </form>
-    </div>
-  </div>
-</nav>
+              <button onClick={handleRegClick} class="btn btn-outline-primary ms-auto px-4 rounded-pill">Register</button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </div>
   )
 }

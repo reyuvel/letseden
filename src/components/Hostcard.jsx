@@ -3,7 +3,7 @@ import React from 'react'
 export const Hostcard = ({eventcard}) => {
   return (
     
-    <div className="eventcard">
+    <div  className="eventcard blockcard">
         <h3>{eventcard.eventname}</h3>
         <h2>{eventcard.date}</h2>
         <h2>{eventcard.location}</h2>

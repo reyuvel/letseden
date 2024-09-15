@@ -18,7 +18,7 @@ export const Services = () => {
 
                     <div className='row'>
                         <div className="col-md-4">
-                            <div class="card" style={{height:'300px'}}>
+                            <div class="card blockservice " style={{height:'300px'}}>
                                 <div class="card-body text-center">
                                 <FontAwesomeIcon icon={faChurch} className="fa-4x mb-4 text-primary icon-color-home" />
                                 <h5 class="card-title">Find Fellowship</h5>
@@ -28,7 +28,7 @@ export const Services = () => {
                         </div>
 
                         <div className="col-md-4">
-                            <div class="card " style={{height:'300px'}}>
+                            <div class="card blockservice " style={{height:'300px'}}>
                                 <div class="card-body text-center">
                                 <FontAwesomeIcon icon={faMicrophone} className="fa-4x mb-4 text-primary icon-color-home" style={{ color: 'red' }} />
                                     <h5 class="card-title">Announce Meetings</h5>
@@ -39,7 +39,7 @@ export const Services = () => {
                         </div>
                         
                         <div className="col-md-4" >
-                            <div class="card" style={{height:'300px'}}>
+                            <div class="card blockservice " style={{height:'300px'}}>
                             <div class="card-body text-center">
                             <FontAwesomeIcon icon={faPenToSquare} className="fa-4x mb-4 text-primary icon-color-home" />
                                     <h5 class="card-title"></h5>

@@ -1,10 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+
 #home{
 
-    background: rgb(0,101,216);
-
-    background: linear-gradient(90deg,rgb(132, 166, 205)10%,rgb(11, 25, 28)100%);
     min-height: 490px;
 }
+
+
 
 @keyframes slideInFromLeft {
  from {
@@ -68,8 +76,8 @@
 }
 
 .container{
- display: flex;
- height: 88vh;
+ display: flex; 
+
 }
 
 .container1{
@@ -93,4 +101,44 @@
 
 .contactimage{
   height: 60%;
+}
+
+.support-border{
+
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    display: flex;         
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    
+
+
+}
+
+.footer{
+
+  background-color: blue;
+
+
+}
+
+@keyframes appear{
+  from{
+      opacity: 0;
+      scale: 0.4;
+  }
+  
+  to{
+      opacity: 1;
+      scale: 1;
+  }
+}
+
+.blockservice{
+  animation: appear 10s linear;
+  animation-timeline: view();
+  animation-range: entry 0%;
 }

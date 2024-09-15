@@ -12,9 +12,8 @@ import { useInView } from 'react-intersection-observer';
   });
 
   return (
-    <div>
       <section id="about">
-        <div className="container my-5 py-5">
+        <div className="container mt-5 pt-5">
           <div className="row">
             <div className="col-md-5">
               <img
@@ -63,7 +62,6 @@ import { useInView } from 'react-intersection-observer';
           </div>
         </div>
       </section>
-    </div>
   );
 };
 

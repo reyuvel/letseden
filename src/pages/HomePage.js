@@ -6,6 +6,7 @@ import Home from '../components/Home.jsx';
 import '../css/Home.css';
 import { Services } from '../components/Services.jsx';
 import { Contact } from '../components/Contact.jsx';
+import { Footer } from '../components/Footer.jsx';
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <About />
       <Services/>
       <Contact/>
+      <Footer/>
     </>
   );
 };

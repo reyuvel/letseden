@@ -78,7 +78,7 @@ export const Hostschedule = () => {
 
     const { isLoaded } = useLoadScript({
         id: 'google-map-script',
-        googleMapsApiKey: mapOptions.googleMapApiKey, // Replace with your API key
+        googleMapsApiKey: mapOptions.googleMapApiKey, 
         libraries: ["places"]
     });
 

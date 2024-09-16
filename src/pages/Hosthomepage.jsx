@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
+import LoggedNavbar from '../components/LoggedNavbar';
 import { Hostside } from '../components/Hostside';
 import { Hostcard } from '../components/Hostcard';
 import '../css/Hostcard.css';
@@ -18,6 +18,10 @@ export const Hosthomepage = () => {
         
         const fetchUser = async () => {
             const { data: { user } } = await supabase.auth.getUser()
+            const { data: { session }, error } = await supabase.auth.getSession();
+
+            console.log("Supabase session:", session);
+
 
           // Check if user data is available
           if (user) {
@@ -56,7 +60,7 @@ export const Hosthomepage = () => {
 
     return (
         <>
-            <Navbar />
+            <LoggedNavbar />
 
             <div style={{ display: 'flex' }}>
                 <Hostside />

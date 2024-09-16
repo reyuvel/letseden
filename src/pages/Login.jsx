@@ -19,7 +19,7 @@ function Login() {
          supabase.auth.onAuthStateChange((event, session) => {
             // Check if the event is a sign-in
             if (event === "SIGNED_IN") {
-                navigate("/hosthome"); // Redirect to /hostpage on sign-in
+                navigate("/map"); // Redirect to /hostpage on sign-in
             }
 
             else if (event === "SIGNED_OUT") {

@@ -32,7 +32,6 @@ const Navbar = () => {
       <button class="btn btn-outline-success fa fa-search mr-1" type="submit"></button>
 
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-primary ms-auto px-4 rounded-pill">Login</button>
       </form>
     </div>
   </div>

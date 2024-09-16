@@ -90,6 +90,32 @@
     }
 }
 
-.g-3 {
+.g-2 {
     animation: fadeIn 1s ease-in;
 }
+
+.container {
+    margin-top: 20px;
+  }
+  
+  .image-col {
+    padding: 50px;
+  }
+  
+  .image-col img {
+    width: 30%;
+    height: auto;
+    position: fixed;
+  }
+  
+  .form-col {
+    padding: 50px;
+    border:solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+  }
+  
+  .submitbtn {
+    width: 100%;
+  }
+  

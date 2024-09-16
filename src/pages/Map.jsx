@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
-import MapNavbar from '../components/MapNavbar';
+import RegNavbar from '../components/RegNavbar';
 import supabase from '../config/supabaseClient';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
@@ -75,7 +75,7 @@ function Map({ isLoaded }) {
   
   return isLoaded && (
     <>
-      <MapNavbar />
+      <RegNavbar/>
 
       <div className='containermap'>
         <div className='control filtering-box'>
@@ -183,9 +183,9 @@ function Map({ isLoaded }) {
           )}
         </GoogleMap>
       </div>
-      
+      <section id="alleventscard">
       <div className="scroll Eventcardsmap">
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 5 }}>
           {fetcherror && <p>{fetcherror}</p>}
           {eventcards && (
             <div className="eventcards">
@@ -198,6 +198,10 @@ function Map({ isLoaded }) {
           )}
         </div>
       </div>
+
+
+      </section>
+      
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Navbar from '../components/Navbar'
+import LoggedNavbar from '../components/LoggedNavbar'
 import { Hostside } from '../components/Hostside'
 import '../css/Hostside.css'
 import { useState } from 'react';
@@ -86,7 +86,7 @@ export const Hostschedule = () => {
   return (
     <>
 
-        <Navbar/>
+        <LoggedNavbar/>
         <div style={{ display: 'flex' }}>
     <Hostside />
     <div style={{ flex: 1 }}>

@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import { Hosthomepage } from './pages/Hosthomepage';
 import { Hostschedule } from './pages/Hostschedule';
 import { supabase } from '@supabase/auth-ui-shared';
+import ProtectedRoute from './components/ProtectedRoutes';
 function App() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -33,16 +34,16 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<HomePage />} />
-            <Route path="/map" element={<Map isLoaded={isLoaded} />} />
+            <Route path="/map" element={<ProtectedRoute><Map isLoaded={isLoaded} /></ProtectedRoute>} />
             
 
 
             <Route path="/login" element={<Login />} />
-            <Route path="/hostpage" element={<Hostpage/>} />
-            <Route path="/addevent" element={<Addevent/>} />
-            <Route path="/hosthome" element={<Hosthomepage/>} />
-            <Route path="/hostschedule" element={<Hostschedule/>} />
-            <Route path="/hostfirstpage" element={<Hostpage/>} />
+            <Route path="/hostpage" element={<ProtectedRoute><Hostpage/></ProtectedRoute>}/>
+            <Route path="/addevent" element={<ProtectedRoute><Addevent/></ProtectedRoute>} />
+            <Route path="/hosthome" element={<ProtectedRoute><Hosthomepage/></ProtectedRoute>} />
+            <Route path="/hostschedule" element={<ProtectedRoute><Hostschedule/></ProtectedRoute>} />
+            <Route path="/hostfirstpage" element={<ProtectedRoute><Hostpage/></ProtectedRoute>} />
             
            
           

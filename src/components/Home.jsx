@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import ConnectImage from './Connect.jpg';
+import supabase from '../config/supabaseClient';
 
 const Home = () => {
   let navigate = useNavigate(); 
@@ -14,8 +15,25 @@ const Home = () => {
     }, 500); // Delay image slide-in to create a staggered effect
   }, []);
 
-  const handleStartClick = () => {
-    navigate('/map'); 
+  const handleLoginClick = async () => {
+    const {data:{user},error}=await supabase.auth.getUser();
+
+    if(error)
+    {
+      console.error("error fetching the check for a user",error);
+    }
+
+    if(user)
+    {
+      console.log(user);
+      navigate('/map');
+    }
+
+    else{
+      navigate('/login')
+    }
+   
+     
   };
 
   return (
@@ -41,8 +59,8 @@ const Home = () => {
               "That they may be one, even as we are one" - John 17:23
             </p>
             <div className="d-flex justify-content-center">
-              <button onClick={handleStartClick} className="btn btn-outline-success rounded-pill text-black px-4" style={{backgroundColor:'grey',marginRight:'100px',border:'none'}}>
-                Start
+              <button onClick={handleLoginClick} className="btn btn-outline-success rounded-pill text-black px-4" style={{backgroundColor:'grey',marginRight:'100px',border:'none'}}>
+                Login
               </button>
             </div>
           </div>

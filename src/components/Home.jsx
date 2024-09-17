@@ -59,7 +59,7 @@ const Home = () => {
               "That they may be one, even as we are one" - John 17:23
             </p>
             <div className="d-flex justify-content-center">
-              <button onClick={handleLoginClick} className="btn btn-outline-success rounded-pill text-black px-4" style={{backgroundColor:'grey',marginRight:'100px',border:'none'}}>
+              <button onClick={handleLoginClick} className="btn btn-outline-secondary rounded-pill text-white px-4" style={{marginRight:'130px',border:'solid',borderWidth:'0.5px',borderColor:'black'}}>
                 Login
               </button>
             </div>

@@ -50,6 +50,7 @@ export const Hostpage = () => {
 
     {
       setErrorMessage('All fields are required');
+      alert("Please enter all the details")
       return;
     }
 

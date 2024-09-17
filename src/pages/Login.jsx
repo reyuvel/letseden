@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/Login.css'; // Import your CSS file
 import supabase from "../config/supabaseClient";
-import { useUser,useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function Login() {
     let navigate = useNavigate(); // Initialize useNavigate
@@ -23,7 +22,7 @@ function Login() {
             }
 
             else if (event === "SIGNED_OUT") {
-                navigate("/"); // Optionally redirect to home or another route on sign-out
+                navigate("/map"); // Optionally redirect to home or another route on sign-out
             }
 
             else {
@@ -43,7 +42,7 @@ function Login() {
             <div className="login" id="register">
                 <header className="login-header">
                     <h1>LOGIN</h1>
-                    <Auth 
+                    <Auth
                         supabaseClient={supabase}
                         appearance={{ theme: ThemeSupa }}
                         theme="dark"

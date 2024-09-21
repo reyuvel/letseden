@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import About from '../components/About.jsx';
 import Home from '../components/Home.jsx';
+import Testimony from '../components/Testimony.jsx';
 import '../css/Home.css';
 import { Services } from '../components/Services.jsx';
 import { Contact } from '../components/Contact.jsx';
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Home />
       <About />
       <Services/>
+      <Testimony/>
       <Contact/>
       <Footer/>
     </>
